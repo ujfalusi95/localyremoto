@@ -20,24 +20,25 @@
 		Connection conexion = null;
 		Statement sentencia = null;
 		ResultSet rs = null;
-
+ String DATABASE_URL= System.getenv().get("DATABASE_URL");
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 			conexion = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/librodb2", "root",
+					DATABASE_URL, "postgres",
 					"balonmano2014");
 			sentencia = conexion.createStatement();
-			rs = sentencia.executeQuery("SELECT * FROM libro");
+			rs = sentencia.executeQuery("SELECT * FROM promotores");
 			while (rs.next()) {
 	%>
 	
-	<%=rs.getString("id")%>
-	<%=rs.getString("isbn")%>
-	<%=rs.getString("titulo")%>
-	<%=rs.getString("categoria")%>
+	<%=rs.getString("id_promotor")%>
+	<%=rs.getString("id_gpv_visita")%>
+	<%=rs.getString("nombre")%>
+	<%=rs.getString("apellidos")%>
+	<%=rs.getString("edad")%>
 	
-	<a href="FormularioEditarLibro.jsp?id=<%=rs.getString("id")%>">Agregar</a>
-	<a href="EliminarLibro.jsp?id=<%=rs.getString("id")%>">Eliminar</a>
+	<a href="FormularioEditarLibro.jsp?id=<%=rs.getString("id_promotor")%>">Agregar</a>
+	<a href="EliminarLibro.jsp?id=<%=rs.getString("id_promotor")%>">Eliminar</a>
 	<br />
 	<%
 		}

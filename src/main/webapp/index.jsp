@@ -7,6 +7,6 @@
 <title>BIENVENIDO, AMIGO</title>
 </head>
 <body>
-	<a href="MostrarLibros.jsp">Mostrar Libros</a>
+	<a href="MostrarLibros.jsp">Mostrar Promotores</a>
 </body>
 </html>

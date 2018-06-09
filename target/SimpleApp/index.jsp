@@ -4,9 +4,9 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>BIENVENIDO</title>
+<title>BIENVENIDO, AMIGO</title>
 </head>
 <body>
-	<a href="MostrarLibros.jsp">Mostrar Libros</a>
+	<a href="MostrarLibros.jsp">Mostrar Promotores</a>
 </body>
 </html>
